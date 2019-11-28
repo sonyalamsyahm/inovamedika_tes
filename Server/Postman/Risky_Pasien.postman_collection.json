@@ -1,0 +1,192 @@
+{
+	"info": {
+		"_postman_id": "d8c3cdf9-4e1e-4c48-8e39-d3da08d1f3f0",
+		"name": "Risky_Pasien",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\" : \"admin\",\n\t\"password\" : \"admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Pasien",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW4iLCJwYXNzd29yZCI6ImFkbWluIiwiY3JlYXRlZEF0IjoiMjAxOS0xMS0yN1QxNDozNToyNy4wMDBaIiwidXBkYXRlZEF0IjoiMjAxOS0xMS0yN1QxNDozNToyNy4wMDBaIn0sImlhdCI6MTU3NDg2NjQ2N30.EZ-uPNbWkDCudalsEEAQ7oAAkPoRUy3EjbQhhtXRHAI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nama\": \"Entis\",\n    \"alamat\" : \"Jl Bungar\",\n    \"kelurahan\" : \"Desa Bungat\",\n    \"kodya\" : \"sabang\",\n    \"kecamatan\" : \"camatcamot\",\n    \"umur\" : \"17\",\n    \"jeniskelaminId\" : 1,\n    \"telepon\" : \"085892372\",\n    \"pendidikanId\" : 1,\n    \"pekerjaan\" : \"Belum bekerja\",\n    \"agamaId\" : 1,\n    \"warganegaraId\" : 1,\n    \"statusId\" : 1,\n    \"goldarId\" : 1,\n    \"penanggungjawab\" : \"Riiish\",\n    \"poliklinikId\" : 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/pasien/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"pasien",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show All Pasiens",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW4iLCJwYXNzd29yZCI6ImFkbWluIiwiY3JlYXRlZEF0IjoiMjAxOS0xMS0yN1QxNDozNToyNy4wMDBaIiwidXBkYXRlZEF0IjoiMjAxOS0xMS0yN1QxNDozNToyNy4wMDBaIn0sImlhdCI6MTU3NDg2NjQ2N30.EZ-uPNbWkDCudalsEEAQ7oAAkPoRUy3EjbQhhtXRHAI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nama\": \"Entis\",\n    \"alamat\" : \"Jl Bungar\",\n    \"kelurahan\" : \"Desa Bungat\",\n    \"kodya\" : \"sabang\",\n    \"kecamatan\" : \"camatcamot\",\n    \"umur\" : \"17\",\n    \"jeniskelamin\" : 1,\n    \"telepon\" : \"085892372\",\n    \"pendidikan\" : 1,\n    \"pekerjaan\" : \"Belum bekerja\",\n    \"agama\" : 1,\n    \"warganegara\" : 1,\n    \"status\" : 1,\n    \"goldar\" : 1,\n    \"penanggungjawab\" : \"Riiish\",\n    \"poliklinik\" : 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/pasiens",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"pasiens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show Pasien Detail",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW4iLCJwYXNzd29yZCI6ImFkbWluIiwiY3JlYXRlZEF0IjoiMjAxOS0xMS0yN1QxNDozNToyNy4wMDBaIiwidXBkYXRlZEF0IjoiMjAxOS0xMS0yN1QxNDozNToyNy4wMDBaIn0sImlhdCI6MTU3NDg2NjQ2N30.EZ-uPNbWkDCudalsEEAQ7oAAkPoRUy3EjbQhhtXRHAI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nama\": \"Entis\",\n    \"alamat\" : \"Jl Bungar\",\n    \"kelurahan\" : \"Desa Bungat\",\n    \"kodya\" : \"sabang\",\n    \"kecamatan\" : \"camatcamot\",\n    \"umur\" : \"17\",\n    \"jeniskelamin\" : 1,\n    \"telepon\" : \"085892372\",\n    \"pendidikan\" : 1,\n    \"pekerjaan\" : \"Belum bekerja\",\n    \"agama\" : 1,\n    \"warganegara\" : 1,\n    \"status\" : 1,\n    \"goldar\" : 1,\n    \"penanggungjawab\" : \"Riiish\",\n    \"poliklinik\" : 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/pasien/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"pasien",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
